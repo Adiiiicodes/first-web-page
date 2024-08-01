@@ -84,3 +84,69 @@ input[type="number"], input[type="text"] {
     background-color: #3083DC;
     color: #F8FFE5;
 }
+
+body {
+    font-family: Arial, sans-serif;
+    background: radial-gradient(circle, #0A1E5E, #0A0F3B);
+    color: #FFFFFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    background-color: #1C1C2E;
+}
+
+h1 {
+    color: #FAFAFA;
+}
+
+/* Base button styling */
+.game-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+}
+
+/* Hover effects */
+.game-button:hover {
+    /* Scale effect */
+    transform: scale(1.2);
+
+    /* Background color change */
+    background-color: #ff5722;
+
+    /* Box shadow to create a lift effect */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+
+    /* Border effect */
+    border: 2px solid #ff5722;
+
+    /* Text color change */
+    color: white;
+
+    /* Optional text shadow effect */
+    text-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722, 0 0 30px #ff5722;
+
+    /* Optional border-radius change */
+    border-radius: 10px;
+}
+
+
+
+.game-button:active {
+    transform: scale(0.55);
+}
+

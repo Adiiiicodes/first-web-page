@@ -3,58 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Selector</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Game Hub</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #0A1E5E, #0A0F3B);
+            color: #FFFFFF;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            background-color: #1C1C2E;
+        }
+
+        h1 {
+            color: #FAFAFA;
+        }
+
+        .game-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease-out;
+            margin: 10px;
+            position: relative;
+        }
+
+        .game-button:hover {
+            transform: scale(1.2);
+            background-color: #ff5722;
+            box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ff5722;
+            text-shadow: 0 0 10px #ff5722, 0 0 20px #ff5722, 0 0 30px #ff5722;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
-    <!-- Landing Page -->
-    <div class="container" id="landing-page">
+    <div class="container">
         <h1>Welcome to the Game Hub</h1>
         <p>Choose a game to play:</p>
-        <button onclick="showGame('stp-game')">Stone Paper Scissors</button>
-        <button onclick="showGame('guess-game')">Number Guessing Game</button>
+        <button class="game-button" id="stp-button">Stone Paper Scissors</button>
+        <button class="game-button" id="guess-button">Number Guessing Game</button>
     </div>
 
-    <!-- Stone Paper Scissors Game Page -->
-    <div class="container" id="stp-game" style="display: none;">
-        <h2>Stone Paper Scissors</h2>
-        <label for="player-name">Enter your name:</label>
-        <input type="text" id="player-name-stp" placeholder="Your Name">
-        
-        <label for="rounds">Number of Rounds:</label>
-        <input type="number" id="rounds" min="1" max="10" value="3">
-        
-        <label for="best-of">Best of X:</label>
-        <input type="number" id="best-of" min="1" max="7" value="3">
-        
-        <div class="game-area">
-            <div class="box large" id="computer-choice">Computer's Choice</div>
-            <div class="box large" id="player-choice">Your Choice</div>
-            <div class="box small" id="computer-score">Computer: 0</div>
-            <div class="box small" id="player-score">You: 0</div>
-        </div>
-        
-        <button onclick="playSTP()">Play</button>
-    </div>
+    <script>
+        document.querySelector('#stp-button').addEventListener('click', () => {
+            window.location.href = 'stp.html'; // Navigate to Stone Paper Scissors page
+        });
 
-    <!-- Number Guessing Game Page -->
-<div class="container" id="guess-game" style="display: none;">
-    <h2>Number Guessing Game</h2>
-    <label for="player-name">Enter your name:</label>
-    <input type="text" id="player-name-guess" placeholder="Your Name">
-
-    <div class="game-area">
-        <div class="box large" id="user-guess">Your Guess</div>
-        <div class="box large" id="game-status">Game Status</div>
-    </div>
-    
-    <input type="number" id="guess-input" min="0" max="99" placeholder="Enter a number">
-    <button onclick="playGuess()">Guess</button>
-</div>
-
-
-    <script src="script.js"></script>
+        document.querySelector('#guess-button').addEventListener('click', () => {
+            window.location.href = 'guess.html'; // Navigate to Number Guessing Game page
+        });
+    </script>
 </body>
 </html>
+
 
 

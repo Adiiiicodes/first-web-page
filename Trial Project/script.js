@@ -79,4 +79,37 @@ function playGuess() {
     document.getElementById('user-guess').textContent = `Your Guess: ${userGuess}`;
 }
 
+const buttons = document.querySelectorAll('.game-button');
+
+buttons.forEach(button => {
+    button.addEventListener('mousemove', (event) => {
+        // Get button dimensions and cursor position
+        const buttonRect = button.getBoundingClientRect();
+        const x = event.clientX - buttonRect.left; // Mouse X position relative to button
+        const y = event.clientY - buttonRect.top;  // Mouse Y position relative to button
+        const centerX = buttonRect.width / 2;
+        const centerY = buttonRect.height / 2;
+        const rotateX = ((y - centerY) / centerY) * -10; // Calculate rotation on X axis
+        const rotateY = ((x - centerX) / centerX) * 10;  // Calculate rotation on Y axis
+
+        // Apply rotation based on cursor position
+        button.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.2)`;
+    });
+
+    button.addEventListener('mouseleave', () => {
+        // Reset rotation and scale when cursor leaves
+        button.style.transform = 'rotateX(0deg) rotateY(0deg) scale(1)';
+    });
+});
+
+document.querySelector('#stp-button').addEventListener('click', () => {
+    window.location.href = 'stp.html'; // Navigate to Stone Paper Scissors page
+});
+
+document.querySelector('#guess-button').addEventListener('click', () => {
+    window.location.href = 'guess.html'; // Navigate to Number Guessing Game page
+});
+
+
+
 
